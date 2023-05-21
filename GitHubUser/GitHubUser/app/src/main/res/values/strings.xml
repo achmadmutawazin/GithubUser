@@ -17,6 +17,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="currency_convertertv">Currency Converter</string>
     <string name="hint">Amount</string>
+    <string name="kesan_pesan">Kesan Pesan : Matakuliah yang sangat membantu pekerjaan masa depan saya</string>
     <string-array name="currencies_array">
         <item>USD</item>
         <item>EUR</item>

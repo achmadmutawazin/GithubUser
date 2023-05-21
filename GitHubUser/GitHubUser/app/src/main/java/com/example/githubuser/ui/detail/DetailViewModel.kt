@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class DetailViewModel (private val db: DbConfig) :ViewModel(){
-    val token = "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"
+    val token = "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"
     val resultDetailUser = MutableLiveData<Result>()
     val resultFollower = MutableLiveData<Result>()
     val resultFollowing = MutableLiveData<Result>()

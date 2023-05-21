@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val pref: SettingPref):ViewModel() {
 
     val resultUser = MutableLiveData<Result>()
-    val token = "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"
+    val token = "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"
     private val _event = MutableLiveData<MainActivityEvent>()
     val event: LiveData<MainActivityEvent>
         get() = _event
