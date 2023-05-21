@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_opt"
+        android:icon="@drawable/ic_baseline_search_white_24px"
+        android:title="@string/search"
+        app:showAsAction="collapseActionView|always"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/fav_opt"
+        android:icon="@drawable/baseline_favorite_24"
+        android:title="@string/favourite_page"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/setting_opt"
+        android:title="@string/setting"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/currency"
+        android:title="@string/currency_converter"
+        app:showAsAction="never"
+        />
+
+</menu>
