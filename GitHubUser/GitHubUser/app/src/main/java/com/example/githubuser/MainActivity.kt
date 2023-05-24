@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -22,12 +23,15 @@ import com.example.githubuser.databinding.ActivityMainBinding
 import com.example.githubuser.ui.currencyconverter.CurrencyConverter
 import com.example.githubuser.ui.detail.Detail
 import com.example.githubuser.ui.favourite.Favourite
+import com.example.githubuser.ui.timeconverter.TimeActivity
+import com.example.githubuser.view.login.LoginActivity
 import com.google.android.material.snackbar.Snackbar
 
 sealed class MainActivityEvent {
     data class ShowMessage(val message: String) : MainActivityEvent()
 }
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -100,6 +104,14 @@ class MainActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.option_menu,menu)
 
+        val logoutMenuItem = menu.findItem(R.id.logout)
+        logoutMenuItem.setOnMenuItemClickListener {
+            val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+            sharedPreferences.edit().putBoolean("isLoggedIn", false).apply()
+            logout()
+            true
+        }
+
         val searchManager=getSystemService(Context.SEARCH_SERVICE) as SearchManager
         val searchView= menu.findItem(R.id.search_opt).actionView as SearchView
 
@@ -142,8 +154,24 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.Time_Converter->{
+                val intent = Intent(this, TimeActivity::class.java)
+                startActivity(intent)
+                true
+            }
         }
         return super.onOptionsItemSelected(item)}
+
+    private fun logout() {
+        // Clear the login status (e.g., using shared preferences)
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        sharedPreferences.edit().putBoolean("isLoggedIn", false).apply()
+
+        // Navigate to the LoginActivity
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish() // Optional: finish the MainActivity to prevent navigating back to it
+    }
 }
 
 

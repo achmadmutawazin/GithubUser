@@ -25,4 +25,15 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/Time_Converter"
+    android:title="@string/time_converter"
+    app:showAsAction="never"/>
+
+    <item
+        android:icon="@drawable/baseline_logout_24"
+        android:id="@+id/logout"
+        android:title="logout"
+        app:showAsAction="never"/>
+
 </menu>

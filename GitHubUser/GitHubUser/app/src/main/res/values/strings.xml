@@ -24,4 +24,15 @@
         <item>GBP</item>
         <!-- Add more currencies as needed -->
     </string-array>
+    <string name="silahkan_login">Silahkan Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="message_login_page">Masukkan dulu datamu ya</string>
+    <string name="login">Masuk</string>
+    <string name="_2023_haidarrachman">2023 Haidarrachman</string>
+    <string name="daftar">Signup</string>
+    <string name="filldata">Fill your data below here</string>
+    <string name="register">Register</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="time_converter">Time Converter</string>
 </resources>
